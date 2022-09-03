@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Image.asset('assets/Logo2.png', fit: BoxFit.cover)
           )),
         Container(width: swidth, height: 600, color: Color.fromARGB(255, 70, 41, 90), 
-          margin: EdgeInsets.only(bottom: 200), child: Column(children: [
+          margin: EdgeInsets.only(bottom: 80), child: Column(children: [
             Center(child: ImageSlideshow(                
               width: swidth*0.95, /// Width of the [ImageSlideshow].
               height: 600, /// Height of the [ImageSlideshow].
@@ -137,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ])),
               Container( height: 350, width: swidth*0.025, color: Color.fromARGB(255, 70, 41, 90)),
             ])),
-          Container(margin: EdgeInsets.only(top: 200, bottom: 200), alignment: Alignment.center, width: swidth, height: 780, color:Color.fromARGB(255, 210, 189, 221), child: 
+          Container(margin: EdgeInsets.only(top: 80, bottom: 80), alignment: Alignment.center, width: swidth, height: 780, color:Color.fromARGB(255, 210, 189, 221), child: 
             Row(children: [
               Container(width: swidth*0.15, height: 780, child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Icon(Icons.apps, color: Color.fromARGB(255, 200, 180, 210), size: 185),
@@ -202,7 +202,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Center(child: Container(width: 600, height: 200, 
                     child: Image.asset('assets/Logo2.png', fit: BoxFit.cover)
                   )),
-                  Container(margin: EdgeInsets.only(left: 10, top: 5, bottom: 15), alignment: Alignment.centerLeft, child: Text('Contatos:', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.bold))),
+                  Container(margin: EdgeInsets.only(left: 10, top: 5, bottom: 15), alignment: Alignment.centerLeft, child: Text('Contatos para agendamento:', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.bold))),
                   Container(margin: EdgeInsets.only(left: 10), alignment: Alignment.centerLeft, child: Text('Número: (84) 9123-3527', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w600))),
                   Container(margin: EdgeInsets.only(left: 10, top: 15, bottom: 15), alignment: Alignment.centerLeft, child: Text('E-mail: psicologaalicemedeiros@gmail.com', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w600))),
                   Row(children: [
@@ -210,7 +210,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       TextButton (onPressed: _launchURL, child:
                         Icon(FontAwesomeIcons.instagram, color: Color.fromARGB(255, 18, 12, 81), size: 25))),
                     Container(width: 30, height: 30, margin: EdgeInsets.only(left: 5), child:
-                      TextButton (onPressed: _launchURL, child:   
+                      TextButton (onPressed: _launchURL1, child:   
                         Icon(FontAwesomeIcons.whatsapp, color: Color.fromARGB(255, 18, 12, 81), size: 25)))],
                   )]
                 )),
