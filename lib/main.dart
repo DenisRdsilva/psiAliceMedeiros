@@ -71,25 +71,25 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Row(children: [
                 Icon(Icons.menu, color: Colors.white, size: 25),
                 Text(' Sobre mim', style: GoogleFonts.raleway(color: Colors.white, fontSize: 17))]))),
-            Spacer(),
-            Align(alignment: Alignment.centerRight, child:
+            Container(width: swidth*0.614, child: Spacer()),
+            Container(alignment: Alignment.centerRight, padding: EdgeInsets.only(left: swidth*0.025), child:
               TextButton (onPressed: _launchURL,
                 child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
                   Icon(FontAwesomeIcons.instagram, color: Colors.white, size: 18),
                   Text(' psi.alicemedeiros', style: TextStyle(color: Colors.white))
             ]))),
-            Align(alignment: Alignment.centerRight, child:
+            Container(child:
               TextButton (onPressed: _launchURL1,
-                child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                  Icon(FontAwesomeIcons.whatsapp, color: Colors.white, size: 18),
-                  Text(' Converse conosco', style: TextStyle(color: Colors.white))
+                child: Row(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.end, children: [
+                  Container(child: Icon(FontAwesomeIcons.whatsapp, color: Colors.white, size: 18)),
+                  Container(child: Text(' Converse conosco', style: TextStyle(color: Colors.white)))
             ]))),
           ])),
         Center(child: Container(width: 700, height: 220, 
           child: Image.asset('assets/Logo2.png', fit: BoxFit.cover)
           )),
         Container(width: swidth, height: 600, color: Color.fromARGB(255, 70, 41, 90), 
-          margin: EdgeInsets.only(bottom: 80), child: Column(children: [
+          margin: EdgeInsets.only(bottom: 120), child: Column(children: [
             Center(child: ImageSlideshow(                
               width: swidth*0.95, /// Width of the [ImageSlideshow].
               height: 600, /// Height of the [ImageSlideshow].
@@ -137,13 +137,13 @@ class _MyHomePageState extends State<MyHomePage> {
               ])),
               Container( height: 350, width: swidth*0.025, color: Color.fromARGB(255, 70, 41, 90)),
             ])),
-          Container(margin: EdgeInsets.only(top: 80, bottom: 80), alignment: Alignment.center, width: swidth, height: 780, color:Color.fromARGB(255, 210, 189, 221), child: 
+          Container(margin: EdgeInsets.only(top: 50, bottom: 50), width: swidth, height: 790, child:
             Row(children: [
-              Container(width: swidth*0.15, height: 780, child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Icon(Icons.apps, color: Color.fromARGB(255, 200, 180, 210), size: 185),
-                Icon(Icons.apps, color: Color.fromARGB(255, 190, 170, 200), size: 185),
-                Icon(Icons.apps, color: Color.fromARGB(255, 180, 160, 190), size: 185),
-                Icon(Icons.apps, color: Color.fromARGB(255, 170, 150, 180), size: 185),
+              Container(width: swidth*0.15, height: 640, alignment: Alignment.center, child: Column(children: [
+                Container(width: 165, height: 150, child: Icon(Icons.apps, color: Color.fromARGB(255, 200, 180, 210), size: 185)),
+                Container(width: 165, height: 150, child: Icon(Icons.apps, color: Color.fromARGB(255, 170, 150, 200), size: 185)),
+                Container(width: 165, height: 150, child: Icon(Icons.apps, color: Color.fromARGB(255, 140, 120, 190), size: 185)),
+                Container(width: 165, height: 150, child: Icon(Icons.apps, color: Color.fromARGB(255, 110, 90, 180), size: 185)),
                 ])
               ),
               Column(children: [
@@ -157,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 19)),
                   )])
                 )),
-                Container(margin: EdgeInsets.only(bottom: 70), 
+                Container(margin: EdgeInsets.only(bottom: 80), 
                 width: swidth*0.7, height: 380,  decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
                 borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90))),
                 child: TextButton (onPressed: () {}, child:  Column(children: [
@@ -167,13 +167,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 19)),
               )])))
           ]),
-          Container(width: swidth*0.15, height: 780, child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Icon(Icons.apps, color: Color.fromARGB(255, 200, 180, 210), size: 185),
-            Icon(Icons.apps, color: Color.fromARGB(255, 190, 170, 200), size: 185),
-            Icon(Icons.apps, color: Color.fromARGB(255, 180, 160, 190), size: 185),
-            Icon(Icons.apps, color: Color.fromARGB(255, 170, 150, 180), size: 185),
-          ])),
-        ])),
+              Container(width: swidth*0.15, height: 640, alignment: Alignment.centerLeft, child: Column(children: [
+                Container(width: 165, height: 150, child: Icon(Icons.apps, color: Color.fromARGB(255, 200, 180, 210), size: 185)),
+                Container(width: 165, height: 150, child: Icon(Icons.apps, color: Color.fromARGB(255, 170, 150, 200), size: 185)),
+                Container(width: 165, height: 150, child: Icon(Icons.apps, color: Color.fromARGB(255, 140, 120, 190), size: 185)),
+                Container(width: 165, height: 150, child: Icon(Icons.apps, color: Color.fromARGB(255, 110, 90, 180), size: 185)),
+                ]
+              )
+            ),
+          ]
+        )),
         Container(height: 600, child: 
           Row(children: [
             Container(width: swidth*0.5, height: 600, color: Colors.grey, child:
@@ -218,9 +221,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text('PsiAliceMedeiros © 2022 Designed by DSilva', style: TextStyle(color: Colors.white, fontSize: 16)))
             ])
           ])
-        )
-      ]), 
-    ));
+        )]
+      )), 
+    );
   }
 }
 
