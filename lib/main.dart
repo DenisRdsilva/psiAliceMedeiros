@@ -64,15 +64,15 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView( 
       physics: BouncingScrollPhysics(),
       child: Column(children: [
-        Container(height: 50, width: swidth, padding: EdgeInsets.only(right: 30),
+        Container(height: 50, width: swidth, 
           color:  Color.fromARGB(255, 70, 41, 90),
           child: Row(children: [
-            Spacer(flex:1),
-            Container(width: 135, height: 50, alignment: Alignment.centerLeft, margin: EdgeInsets.only(left: swidth*0.02), child: TextButton(onPressed: () => scaffoldKey.currentState?.openDrawer(), 
+            Spacer(flex:3),
+            Container(width: 135, height: 50, alignment: Alignment.centerLeft, child: TextButton(onPressed: () => scaffoldKey.currentState?.openDrawer(), 
               child: Row(children: [
                 Icon(Icons.menu, color: Colors.white, size: 25),
                 Text(' Sobre mim', style: GoogleFonts.raleway(color: Colors.white, fontSize: 17))]))),
-            Spacer(flex:150),
+            Spacer(flex:100),
             Container(alignment: Alignment.centerRight, padding: EdgeInsets.only(left: swidth*0.025), child:
               TextButton (onPressed: _launchURL,
                 child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(child: Icon(FontAwesomeIcons.whatsapp, color: Colors.white, size: 18)),
                   Container(child: Text(' Converse conosco', style: TextStyle(color: Colors.white)))
             ]))),
-            Spacer(flex:1),
+            Spacer(flex:3),
           ])),
         Center(child: Container(width: 700, height: 220, 
           child: Image.asset('assets/Logo2.png', fit: BoxFit.cover)
@@ -149,7 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ))  
             ])),
           ],
-          if (swidth>1000)...[
+          if (swidth>(1365))...[
             Container(height: 350, width: swidth,
               child: Row(children: [
                 Container( height: 350, width: swidth*0.025, color: Color.fromARGB(255, 70, 41, 90)),
@@ -173,41 +173,35 @@ class _MyHomePageState extends State<MyHomePage> {
                 ])),
               Container( height: 350, width: swidth*0.025, color: Color.fromARGB(255, 70, 41, 90)),
             ])),
-          ]else...[
-            Container(height: 650, width: swidth,
+          ],if (swidth<(1365))...[
+            Container(height: 140+180+351, width: swidth,
               child: Column(children: [
-                Container(width: swidth, height: 140, alignment: Alignment.center, color: Color.fromARGB(255, 200, 180, 210),
-                    child: Center(child: TextButton(onPressed: () => scaffoldKey.currentState?.openDrawer(), child: 
-                      Container(width: swidth, height: 140, child: Row(children: [
-                        Container(width: 80, height: 80, margin: EdgeInsets.only(left: 30), child: Image.asset('assets/Logo1.png', fit: BoxFit.cover)),
-                        Container(width: 320, height: 140, alignment: Alignment.center, child: Text('Quem sou eu?', style: GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 42)
-                      ))]
+                Container(width: swidth, height: 140, color: Color.fromARGB(255, 200, 180, 210),
+                    child: TextButton(onPressed: () => scaffoldKey.currentState?.openDrawer(), child: 
+                      Container(width: swidth, height: 140, alignment: Alignment.center, child: Row(children: [
+                        Container(width: 60, height: 60, margin: EdgeInsets.only(left: 18, right: 10), child: Image.asset('assets/Logo1.png', fit: BoxFit.cover)),
+                        Container(width: 300, height: 40, child: Text('Quem sou eu?', style: GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 40)
+                      )),
+                      Spacer(),
+                      ]
                     ))
-                  ))),
-                Container(height: 293.1, width: swidth, color: Color.fromARGB(255, 70, 41, 90), padding: EdgeInsets.all(13), 
-                  child: CustomVideo()),
-              Container( height: 170, width: swidth, color:Color.fromARGB(255, 200, 180, 210), alignment: Alignment.center, child: Column(children: [
-                Container(margin: EdgeInsets.only(top: 30, left: 30), width:swidth, height: 80,
+                  )),
+                Container(height: 351, width: swidth, alignment: Alignment.center, color: Color.fromARGB(255, 70, 41, 90), 
+                  child: Container(width: swidth, height: 351, color: Color.fromARGB(255, 70, 41, 90), child: CustomVideo())),
+              Container( height: 180, width: swidth, color:Color.fromARGB(255, 200, 180, 210), child: Column(children: [
+                Container(margin: EdgeInsets.only(top: 30, left: 30, right: 30), width: swidth, alignment: Alignment.center, height: 80,
                   child: Text('“Desbravando a dor e a delícia de tornar-se adulto.”', style: 
                     GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 28, fontStyle: FontStyle.italic))),
-                Container(width:swidth, height: 30, margin: EdgeInsets.only(left: 30),
+                Container(width:swidth, height: 30, margin: EdgeInsets.only(top: 10), alignment: Alignment.center,
                   child: Text('Alice Medeiros', style: 
                     GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 24))),
                 ])),
             ])),
           ], if (swidth>1100)...[
-          Container(margin: EdgeInsets.only(top: 50, bottom: 50), width: swidth, height: 790, child:
-            Row(children: [
-              Container(width: swidth*0.15, height: 640, alignment: Alignment.center, child: Column(children: [
-                Container(width: 165, height: 150, child: Icon(Icons.apps, color: Color.fromARGB(255, 200, 180, 210), size: 185)),
-                Container(width: 165, height: 150, child: Icon(Icons.apps, color: Color.fromARGB(255, 170, 150, 200), size: 185)),
-                Container(width: 165, height: 150, child: Icon(Icons.apps, color: Color.fromARGB(255, 140, 120, 190), size: 185)),
-                Container(width: 165, height: 150, child: Icon(Icons.apps, color: Color.fromARGB(255, 110, 90, 180), size: 185)),
-                ])
-              ),
-              Column(children: [
-                Container(margin: EdgeInsets.only(top: 70, bottom: 40), 
-                width: swidth*0.7, height: 220,  decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
+          Container(margin: EdgeInsets.only(top: 50, bottom: 50), width: swidth, height: 810, child:
+              Column( crossAxisAlignment: CrossAxisAlignment.center, children: [
+                Container(margin: EdgeInsets.only(top: 70, bottom: 40),
+                width: swidth*0.8, height: 220,  decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
                 borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90))),         
                 child: TextButton (onPressed: () {}, child:  Column(children: [
                     Container(margin: EdgeInsets.only(top: 30, right: 20, left: 20), child: Text('SERVIÇOS', style: 
@@ -217,7 +211,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   )])
                 )),
                 Container(margin: EdgeInsets.only(bottom: 70), 
-                width: swidth*0.7, height: 380,  decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
+                width: swidth*0.8, height: 410,  decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
                 borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90))),
                 child: TextButton (onPressed: () {}, child:  Column(children: [
                     Container(margin: EdgeInsets.only(top: 30, right: 20, left: 20), child: Text('TEXTO EXPLICATIVO', style: 
@@ -225,21 +219,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     Container(margin: EdgeInsets.only(top: 25, right: 20, left: 20), child: Text('Olhar para si mesmo é, muitas vezes, desafiador. Pode provocar medo, insegurança, aquele pensamento de “depois eu penso nisso, agora não”. Mas e quando aquilo que foi deixado para depois começa a nos atrapalhar, provocando ansiedade, tristeza e a sensação de que precisamos falar com alguém sobre aquele assunto? É a partir desse momento que a psicoterapia poderia ajudar. Pode parecer estranho falar sobre si com alguém que não conhecemos. Com o tempo, passamos a confiar no psicólogo que nos acompanha, nos sentimos à vontade para falar sobre os assuntos mais delicados, não nos sentimos julgados, mas acolhidos. Semana após semana percebemos as contribuições das sessões em nosso dia a dia, até que em conjunto com o nosso terapeuta decidimos que naquele momento já podemos seguir sem o acompanhamento profissional, que já conseguimos lidar melhor com os acontecimentos de nossas vidas. Deixamos de nos ver semanalmente, mas cientes de que podemos, a qualquer momento, escolher voltar. Essa é a beleza da psicoterapia.', textAlign: TextAlign.justify, style: 
                       GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 19)),
               )])))
-          ]),
-              Container(width: swidth*0.15, height: 640, alignment: Alignment.centerLeft, child: Column(children: [
-                Container(width: 165, height: 150, child: Icon(Icons.apps, color: Color.fromARGB(255, 200, 180, 210), size: 185)),
-                Container(width: 165, height: 150, child: Icon(Icons.apps, color: Color.fromARGB(255, 170, 150, 200), size: 185)),
-                Container(width: 165, height: 150, child: Icon(Icons.apps, color: Color.fromARGB(255, 140, 120, 190), size: 185)),
-                Container(width: 165, height: 150, child: Icon(Icons.apps, color: Color.fromARGB(255, 110, 90, 180), size: 185)),
-                ]
-              )
-            ),
-          ]
-        ))
+            ]),
+          )
         ]else...[
           Column(children: [
-              Container(margin: EdgeInsets.only(top: 70, bottom: 40), 
-                width: swidth*0.95, height: 330,  decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
+              Container(margin: EdgeInsets.only(top: 80, bottom: 40), 
+                width: swidth*0.95, height: sheight*0.21/(0.4),  decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
                 borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90))),         
                 child: TextButton (onPressed: () {}, child:  Column(children: [
                     Container(margin: EdgeInsets.only(top: 30, right: 20, left: 20), child: Text('SERVIÇOS', style: 
@@ -248,8 +233,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 19)),
                   )])
                 )),
-              Container(margin: EdgeInsets.only(bottom: 70), 
-                width: swidth*0.95, height: 700,  decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
+              Container(margin: EdgeInsets.only(bottom: 80), 
+                width: swidth*0.95, height: sheight*0.4/(0.35),  decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
                 borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90))),
                 child: TextButton (onPressed: () {}, child:  Column(children: [
                     Container(margin: EdgeInsets.only(top: 30, right: 20, left: 20), child: Text('TEXTO EXPLICATIVO', style: 
@@ -407,7 +392,7 @@ class CustomVideo extends StatelessWidget {
 @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Container(color: Color.fromARGB(255, 70, 41, 90), alignment: Alignment.center,
       child: YoutubePlayerIFrame(
         controller: _controller,
         aspectRatio: 16 / 9,
