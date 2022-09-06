@@ -209,7 +209,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Container(width: swidth, height: 200, child: Row(children: [
                         Spacer(),
                         Container(width: 60, height: 60, child: Image.asset('assets/Logo1.png', fit: BoxFit.cover)),
-                        Text('Quem sou eu?', style: GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 35)), 
+                        Text('Quem sou eu?', style: GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 30)), 
                         Spacer(),
                       ]
                     ))
