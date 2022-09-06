@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -8,6 +9,7 @@ import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 void main() {
   runApp(const MyApp());
@@ -64,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView( 
       physics: BouncingScrollPhysics(),
       child: Column(children: [
+        if (swidth>500)...[
         Container(height: 50, width: swidth, 
           color:  Color.fromARGB(255, 70, 41, 90),
           child: Row(children: [
@@ -87,6 +90,29 @@ class _MyHomePageState extends State<MyHomePage> {
             ]))),
             Spacer(flex:3),
           ])),
+        ]else...[
+          Container(height: 50, width: swidth, 
+          color:  Color.fromARGB(255, 70, 41, 90),
+          child: Row(children: [
+            Spacer(flex:3),
+            Container(width: 135, height: 50, alignment: Alignment.centerLeft, child: TextButton(onPressed: () => scaffoldKey.currentState?.openDrawer(), 
+              child: Row(children: [
+                Icon(Icons.menu, color: Colors.white, size: 25),
+                Text(' Sobre mim', style: GoogleFonts.raleway(color: Colors.white, fontSize: 17))]))),
+            Spacer(flex:100),
+            Container(alignment: Alignment.centerRight, padding: EdgeInsets.only(left: swidth*0.025), child:
+              TextButton (onPressed: _launchURL,
+                child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+                  Icon(FontAwesomeIcons.instagram, color: Colors.white, size: 18),
+            ]))),
+            Container(child:
+              TextButton (onPressed: _launchURL1,
+                child: Row(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.end, children: [
+                  Container(child: Icon(FontAwesomeIcons.whatsapp, color: Colors.white, size: 18)),
+            ]))),
+            Spacer(flex:3),
+          ])),
+        ],
         Center(child: Container(width: 700, height: 220, 
           child: Image.asset('assets/Logo2.png', fit: BoxFit.cover)
           )),
@@ -179,7 +205,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 Container(width: swidth, height: 140, color: Color.fromARGB(255, 200, 180, 210),
                     child: TextButton(onPressed: () => scaffoldKey.currentState?.openDrawer(), child: 
                       Container(width: swidth, height: 140, alignment: Alignment.center, child: Row(children: [
-                        Container(width: 60, height: 60, margin: EdgeInsets.only(left: 18, right: 10), child: Image.asset('assets/Logo1.png', fit: BoxFit.cover)),
+                        Spacer(),
+                        Container(width: 60, height: 60, margin: EdgeInsets.only(right: 10), child: Image.asset('assets/Logo1.png', fit: BoxFit.cover)),
                         Container(width: 300, height: 40, child: Text('Quem sou eu?', style: GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 40)
                       )),
                       Spacer(),
@@ -190,11 +217,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Container(width: swidth, height: 351, color: Color.fromARGB(255, 70, 41, 90), child: CustomVideo())),
               Container( height: 180, width: swidth, color:Color.fromARGB(255, 200, 180, 210), child: Column(children: [
                 Container(margin: EdgeInsets.only(top: 30, left: 30, right: 30), width: swidth, alignment: Alignment.center, height: 80,
-                  child: Text('“Desbravando a dor e a delícia de tornar-se adulto.”', style: 
-                    GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 28, fontStyle: FontStyle.italic))),
+                  child: Text('“Desbravando a dor e a delícia de tornar-se adulto.”', maxLines: 2, style: 
+                    GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 24, fontStyle: FontStyle.italic))),
                 Container(width:swidth, height: 30, margin: EdgeInsets.only(top: 10), alignment: Alignment.center,
                   child: Text('Alice Medeiros', style: 
-                    GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 24))),
+                    GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 20))),
                 ])),
             ])),
           ], if (swidth>1100)...[
@@ -206,8 +233,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: TextButton (onPressed: () {}, child:  Column(children: [
                     Container(margin: EdgeInsets.only(top: 30, right: 20, left: 20), child: Text('SERVIÇOS', style: 
                       GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 28))),
-                    Container(margin: EdgeInsets.only(top: 25, right: 20, left: 20), child: Text('Psicoterapia individual nas modalidades presencial e online através de plataforma segura. Ambas semanais com duração de até 60 minutos.  No primeiro caso, nos encontramos pessoalmente em meu consultório. Já para o atendimento online, você pode escolher onde estará no momento da sessão, basta ter um computador, celular ou tablet com acesso à internet.', textAlign: TextAlign.justify, style: 
-                      GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 19)),
+                    Container(margin: EdgeInsets.only(top: 25, right: 20, left: 20), child: AutoSizeText('Psicoterapia individual nas modalidades presencial e online através de plataforma segura. Ambas semanais com duração de até 60 minutos.  No primeiro caso, nos encontramos pessoalmente em meu consultório. Já para o atendimento online, você pode escolher onde estará no momento da sessão, basta ter um computador, celular ou tablet com acesso à internet.', textAlign: TextAlign.justify, style: 
+                      GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 19), maxLines: 11),
                   )])
                 )),
                 Container(margin: EdgeInsets.only(bottom: 70), 
@@ -216,8 +243,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: TextButton (onPressed: () {}, child:  Column(children: [
                     Container(margin: EdgeInsets.only(top: 30, right: 20, left: 20), child: Text('TEXTO EXPLICATIVO', style: 
                       GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 28))),
-                    Container(margin: EdgeInsets.only(top: 25, right: 20, left: 20), child: Text('Olhar para si mesmo é, muitas vezes, desafiador. Pode provocar medo, insegurança, aquele pensamento de “depois eu penso nisso, agora não”. Mas e quando aquilo que foi deixado para depois começa a nos atrapalhar, provocando ansiedade, tristeza e a sensação de que precisamos falar com alguém sobre aquele assunto? É a partir desse momento que a psicoterapia poderia ajudar. Pode parecer estranho falar sobre si com alguém que não conhecemos. Com o tempo, passamos a confiar no psicólogo que nos acompanha, nos sentimos à vontade para falar sobre os assuntos mais delicados, não nos sentimos julgados, mas acolhidos. Semana após semana percebemos as contribuições das sessões em nosso dia a dia, até que em conjunto com o nosso terapeuta decidimos que naquele momento já podemos seguir sem o acompanhamento profissional, que já conseguimos lidar melhor com os acontecimentos de nossas vidas. Deixamos de nos ver semanalmente, mas cientes de que podemos, a qualquer momento, escolher voltar. Essa é a beleza da psicoterapia.', textAlign: TextAlign.justify, style: 
-                      GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 19)),
+                    Container(margin: EdgeInsets.only(top: 25, right: 20, left: 20), child: AutoSizeText('Olhar para si mesmo é, muitas vezes, desafiador. Pode provocar medo, insegurança, aquele pensamento de “depois eu penso nisso, agora não”. Mas e quando aquilo que foi deixado para depois começa a nos atrapalhar, provocando ansiedade, tristeza e a sensação de que precisamos falar com alguém sobre aquele assunto? É a partir desse momento que a psicoterapia poderia ajudar. Pode parecer estranho falar sobre si com alguém que não conhecemos. Com o tempo, passamos a confiar no psicólogo que nos acompanha, nos sentimos à vontade para falar sobre os assuntos mais delicados, não nos sentimos julgados, mas acolhidos. Semana após semana percebemos as contribuições das sessões em nosso dia a dia, até que em conjunto com o nosso terapeuta decidimos que naquele momento já podemos seguir sem o acompanhamento profissional, que já conseguimos lidar melhor com os acontecimentos de nossas vidas. Deixamos de nos ver semanalmente, mas cientes de que podemos, a qualquer momento, escolher voltar. Essa é a beleza da psicoterapia.', textAlign: TextAlign.justify, style: 
+                      GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 19), maxLines: 30),
               )])))
             ]),
           )
