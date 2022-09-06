@@ -113,9 +113,16 @@ class _MyHomePageState extends State<MyHomePage> {
             Spacer(flex:3),
           ])),
         ],
+        if (swidth>700)...[
         Center(child: Container(width: 700, height: 220, 
           child: Image.asset('assets/Logo2.png', fit: BoxFit.cover)
           )),
+        ] else...[
+          Row(children: [
+            Center(child: Container(width: swidth, height: 220,
+              child: Image.asset('assets/Logo2.png', fit: BoxFit.cover))),
+          ])
+        ],
         if (swidth>800)...[
         Container(width: swidth, height: 600, color: Color.fromARGB(255, 70, 41, 90), 
           margin: EdgeInsets.only(bottom: 120), child: Column(children: [
@@ -201,7 +208,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ])),
           ],
           if (swidth<=(1365))...[
-            Container(height: 711, width: swidth,
+            Container(height: 681, width: swidth,
               child: Column(children: [
                 Container(height: 5, width: swidth, color: Color.fromARGB(255, 70, 41, 90)),
                   Container(width: swidth, height: 150, color: Color.fromARGB(255, 200, 180, 210),
@@ -216,9 +223,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   ))),
                 Container(height: 351, width: 624, 
                   child: CustomVideo()),
-              Container(height: 200, width: swidth, color:Color.fromARGB(255, 200, 180, 210), child: Column(
+              Container(height: 170, width: swidth, color:Color.fromARGB(255, 200, 180, 210), child: Column(
                 mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                Container(width: swidth, height: 80, margin: EdgeInsets.only(right: 20, left: 20),
+                Container(width: swidth, height: 70, margin: EdgeInsets.only(right: 20, left: 20),
                   child: Text('“Desbravando a dor e a delícia de tornar-se adulto.”', style: 
                     GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 24, fontStyle: FontStyle.italic), maxLines: 2)),
                 Container(width: swidth, height: 40, margin: EdgeInsets.only(left: 20),
