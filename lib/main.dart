@@ -208,30 +208,46 @@ class _MyHomePageState extends State<MyHomePage> {
             ])),
           ],
           if (swidth<=(1365))...[
-            Container(height: 681, width: swidth,
+            Container(height: 681, width: swidth, margin: EdgeInsets.only(top: 20),
               child: Column(children: [
                 Container(height: 5, width: swidth, color: Color.fromARGB(255, 70, 41, 90)),
+                if (swidth>500)...[
                   Container(width: swidth, height: 150, color: Color.fromARGB(255, 200, 180, 210),
                     child: Center(child: TextButton(onPressed: () => scaffoldKey.currentState?.openDrawer(), child: 
-                      Container(width: swidth, height: 200, child: Row(children: [
-                        Spacer(),
+                      Container(width: swidth, height: 150, child: Row(children: [
+                        Spacer(flex: 1),
                         Container(width: 60, height: 60, child: Image.asset('assets/Logo1.png', fit: BoxFit.cover)),
-                        Text('Quem sou eu?', style: GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 30)), 
-                        Spacer(),
-                      ]
-                    ))
-                  ))),
-                Container(height: 351, width: 624, 
-                  child: CustomVideo()),
-              Container(height: 170, width: swidth, color:Color.fromARGB(255, 200, 180, 210), child: Column(
-                mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                Container(width: swidth, height: 70, margin: EdgeInsets.only(right: 20, left: 20),
-                  child: Text('“Desbravando a dor e a delícia de tornar-se adulto.”', style: 
-                    GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 24, fontStyle: FontStyle.italic), maxLines: 2)),
-                Container(width: swidth, height: 40, margin: EdgeInsets.only(left: 20),
-                  child: Text('Alice Medeiros', style: 
-                    GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 24))),
-                ])),
+                        Text('Quem sou eu?', style: GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 30)),
+                        Spacer(flex: 10)]))))), 
+                ]else...[
+                  Container(width: swidth, height: 100, color: Color.fromARGB(255, 200, 180, 210),
+                    child: Center(child: TextButton(onPressed: () => scaffoldKey.currentState?.openDrawer(), child: 
+                      Container(width: swidth, height: 100, child: Row(children: [
+                        Spacer(flex: 1),
+                        Container(width: 50, height: 50, child: Image.asset('assets/Logo1.png', fit: BoxFit.cover)),
+                        Text('Quem sou eu?', style: GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 24)), 
+                      Spacer(flex: 10)])))))],
+                  Container(height: 351, width: 624, color: Color.fromARGB(255, 70, 41, 90),
+                    child: CustomVideo()),
+                if (swidth>500)...[
+                  Container(height: 170, width: swidth, color:Color.fromARGB(255, 200, 180, 210), child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
+                      Container(width: swidth, height: 70, margin: EdgeInsets.only(right: 20, left: 20),
+                        child: Text('“Desbravando a dor e a delícia de tornar-se adulto.”', style: 
+                          GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 26, fontStyle: FontStyle.italic), maxLines: 2)),
+                      Container(width: swidth, height: 40, margin: EdgeInsets.only(left: 20),
+                        child: Text('Alice Medeiros', style: 
+                        GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 24)))])),
+                ]else...[
+                  Container(height: 120, width: swidth, color:Color.fromARGB(255, 200, 180, 210), child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
+                      Container(width: swidth, height: 70, margin: EdgeInsets.only(right: 20, left: 20),
+                        child: Center(child: Text('“Desbravando a dor e a delícia de tornar-se adulto.”', style: 
+                          GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontStyle: FontStyle.italic), maxLines: 2))),
+                      Container(width: swidth, height: 40, margin: EdgeInsets.only(left: 20),
+                        child: Text('Alice Medeiros', style: 
+                          GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 16))),
+              ]))],
               Container( height: 5, width: swidth, color: Color.fromARGB(255, 70, 41, 90)),
             ])),
           ],
@@ -272,8 +288,8 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ]else...[
           Column(children: [
-              Container(margin: EdgeInsets.only(top: 70, bottom: 40), 
-                width: swidth*0.95, height: sheight*0.21/(0.4),  decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
+              Container(margin: EdgeInsets.only(bottom: 40), 
+                width: swidth*0.95, height: swidth*0.6,  decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
                 borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90)),
                 boxShadow: [BoxShadow(
                   color: Colors.blueGrey.withOpacity(0.5), spreadRadius: 5, blurRadius: 5, offset: Offset(0, 3))]),    
@@ -284,8 +300,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18), maxLines: 11),
                   )])
                 )),
-              Container(margin: EdgeInsets.only(bottom: 60), 
-                width: swidth*0.95, height: sheight*0.4/(0.35),  decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
+              Container(margin: EdgeInsets.only(bottom: 70), 
+                width: swidth*0.95, height: swidth*1.4, decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
                 borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90)),
                 boxShadow: [BoxShadow(
                     color: Colors.blueGrey.withOpacity(0.5), spreadRadius: 5, blurRadius: 5, offset: Offset(0, 3))]),
@@ -356,7 +372,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ])
         )]else...[
           Column(children:[
-            Container(height: 200, child: 
+            Container(height: 200, margin: EdgeInsets.only(top: 20), child: 
             Container(width: swidth, height: 600, padding: EdgeInsets.all(8), color: Colors.grey, child:
               FlutterMap(
                 options: MapOptions(
