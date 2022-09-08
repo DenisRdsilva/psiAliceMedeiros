@@ -10,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:sizer/sizer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,12 +42,13 @@ class _MyHomePageState extends State<MyHomePage> {
     double swidth = MediaQuery.of(context).size.width;
     double sheight = MediaQuery.of(context).size.height;
     double val = 0;
-    if (swidth>1000)[val = 0.3];
-    if (swidth>700)[
-    if (swidth<1000)[val = 0.4]];
-    if (swidth>600)[
-    if (swidth<800)[val = 0.5]];
-    if (swidth<600)[val = 0.85];
+    double exp = 0;
+    if (swidth>1000)[val = 0.3, exp = 1400];
+    if (swidth<=1000)[
+    if (swidth>800)[val = 0.4, exp = 1330]];
+    if (swidth<=800)[
+    if (swidth>600)[val = 0.5, exp = 1200]];
+    if (swidth<=600)[val = 0.85, exp = 1150];
     return Scaffold(
       key: scaffoldKey,
       drawer: Drawer(width: swidth*val, backgroundColor: Color.fromARGB(255, 210, 189, 221),
@@ -208,49 +210,62 @@ class _MyHomePageState extends State<MyHomePage> {
             ])),
           ],
           if (swidth<=(1365))...[
-            Container(height: 681, width: swidth, margin: EdgeInsets.only(top: 20),
-              child: Column(children: [
-                Container(height: 5, width: swidth, color: Color.fromARGB(255, 70, 41, 90)),
-                if (swidth>500)...[
+            if (swidth>600)...[
+              Container(height: 701, width: swidth, margin: EdgeInsets.only(top: 20),
+                child: Column(children: [
+                Container(height: 5, width: swidth, color: Color.fromARGB(255, 70, 41, 90)),    
                   Container(width: swidth, height: 150, color: Color.fromARGB(255, 200, 180, 210),
                     child: Center(child: TextButton(onPressed: () => scaffoldKey.currentState?.openDrawer(), child: 
                       Container(width: swidth, height: 150, child: Row(children: [
                         Spacer(flex: 1),
                         Container(width: 60, height: 60, child: Image.asset('assets/Logo1.png', fit: BoxFit.cover)),
                         Text('Quem sou eu?', style: GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 30)),
-                        Spacer(flex: 10)]))))), 
+                        Spacer(flex: 10)]))))),
+                  Container(height: 351, width: swidth, color: Color.fromARGB(255, 70, 41, 90),
+                    child: CustomVideo()),
+                  Container(height: 130, width: swidth, color:Color.fromARGB(255, 200, 180, 210), child:
+                    Row(children: [
+                      Spacer(flex: 5),
+                      Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
+                        Container(width: 561, height: 45, margin: EdgeInsets.only(right: 20, top: 10, left: 20),
+                          child: Text('“Desbravando a dor e a delícia de tornar-se adulto.”', style: 
+                            GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 24, fontStyle: FontStyle.italic), maxLines: 2)),
+                        Container(width: 178, height: 30, margin: EdgeInsets.only(left: 20),
+                          child: Text('Alice Medeiros', style: 
+                            GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 22)))]),
+                      Spacer(flex: 5),
+                    ])),
+                  Container( height: 5, width: swidth, margin: EdgeInsets.only(bottom: 40), color: Color.fromARGB(255, 70, 41, 90)),
+                ]))
                 ]else...[
+                Container(height: 601, width: swidth, margin: EdgeInsets.only(top: 20),
+                  child: Column(children: [
+                  Container(height: 5, width: swidth, color: Color.fromARGB(255, 70, 41, 90)),
                   Container(width: swidth, height: 100, color: Color.fromARGB(255, 200, 180, 210),
                     child: Center(child: TextButton(onPressed: () => scaffoldKey.currentState?.openDrawer(), child: 
                       Container(width: swidth, height: 100, child: Row(children: [
                         Spacer(flex: 1),
                         Container(width: 50, height: 50, child: Image.asset('assets/Logo1.png', fit: BoxFit.cover)),
                         Text('Quem sou eu?', style: GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 24)), 
-                      Spacer(flex: 10)])))))],
-                  Container(height: 351, width: 624, color: Color.fromARGB(255, 70, 41, 90),
+                      Spacer(flex: 10)]))))),
+                  Container(height: 351, width: swidth, color: Color.fromARGB(255, 70, 41, 90),
                     child: CustomVideo()),
-                if (swidth>500)...[
-                  Container(height: 170, width: swidth, color:Color.fromARGB(255, 200, 180, 210), child: Column(
+                  Container(height: 100, width: swidth, color:Color.fromARGB(255, 200, 180, 210), child: Column(
                     mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                      Container(width: swidth, height: 70, margin: EdgeInsets.only(right: 20, left: 20),
-                        child: Text('“Desbravando a dor e a delícia de tornar-se adulto.”', style: 
-                          GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 26, fontStyle: FontStyle.italic), maxLines: 2)),
-                      Container(width: swidth, height: 40, margin: EdgeInsets.only(left: 20),
-                        child: Text('Alice Medeiros', style: 
-                        GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 24)))])),
-                ]else...[
-                  Container(height: 120, width: swidth, color:Color.fromARGB(255, 200, 180, 210), child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                      Container(width: swidth, height: 70, margin: EdgeInsets.only(right: 20, left: 20),
+                      Container(width: swidth, height: 60, margin: EdgeInsets.only(right: 20, left: 20),
                         child: Center(child: Text('“Desbravando a dor e a delícia de tornar-se adulto.”', style: 
                           GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontStyle: FontStyle.italic), maxLines: 2))),
-                      Container(width: swidth, height: 40, margin: EdgeInsets.only(left: 20),
+                      Container(width: swidth, height: 30, margin: EdgeInsets.only(left: 20),
                         child: Text('Alice Medeiros', style: 
                           GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 16))),
-              ]))],
-              Container( height: 5, width: swidth, color: Color.fromARGB(255, 70, 41, 90)),
-            ])),
-          ],
+                          ]
+                        )
+                      ),
+                    Container(height: 5, width: swidth, margin: EdgeInsets.only(bottom: 40), color: Color.fromARGB(255, 70, 41, 90)),
+                  ]
+                )
+              ),  
+            ]],
           if (swidth>1100)...[
           Container(margin: EdgeInsets.only(top: 60), width: swidth, height: 810, child:
               Column( crossAxisAlignment: CrossAxisAlignment.center, children: [
@@ -288,8 +303,8 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ]else...[
           Column(children: [
-              Container(margin: EdgeInsets.only(bottom: 40), 
-                width: swidth*0.95, height: swidth*0.6,  decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
+              Container(margin: EdgeInsets.only(top: 60, bottom: 40), 
+                width: swidth*0.95, height: sheight*0.5, decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
                 borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90)),
                 boxShadow: [BoxShadow(
                   color: Colors.blueGrey.withOpacity(0.5), spreadRadius: 5, blurRadius: 5, offset: Offset(0, 3))]),    
@@ -301,7 +316,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   )])
                 )),
               Container(margin: EdgeInsets.only(bottom: 70), 
-                width: swidth*0.95, height: swidth*1.4, decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
+                width: swidth*0.95, height: exp-swidth, decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
                 borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90)),
                 boxShadow: [BoxShadow(
                     color: Colors.blueGrey.withOpacity(0.5), spreadRadius: 5, blurRadius: 5, offset: Offset(0, 3))]),
@@ -309,7 +324,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Container(margin: EdgeInsets.only(top: 25, right: 20, left: 15), child: Text('TEXTO EXPLICATIVO', style: 
                       GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 28))),
                     Container(margin: EdgeInsets.only(top: 20, right: 20, left: 15), child: Text('Olhar para si mesmo é, muitas vezes, desafiador. Pode provocar medo, insegurança, aquele pensamento de “depois eu penso nisso, agora não”. Mas e quando aquilo que foi deixado para depois começa a nos atrapalhar, provocando ansiedade, tristeza e a sensação de que precisamos falar com alguém sobre aquele assunto? É a partir desse momento que a psicoterapia poderia ajudar. Pode parecer estranho falar sobre si com alguém que não conhecemos. Com o tempo, passamos a confiar no psicólogo que nos acompanha, nos sentimos à vontade para falar sobre os assuntos mais delicados, não nos sentimos julgados, mas acolhidos. Semana após semana percebemos as contribuições das sessões em nosso dia a dia, até que em conjunto com o nosso terapeuta decidimos que naquele momento já podemos seguir sem o acompanhamento profissional, que já conseguimos lidar melhor com os acontecimentos de nossas vidas. Deixamos de nos ver semanalmente, mas cientes de que podemos, a qualquer momento, escolher voltar. Essa é a beleza da psicoterapia.', textAlign: TextAlign.justify, style: 
-                      GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18), maxLines: 30),
+                      GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18), overflow: TextOverflow.clip,),
               )])))
           ]),
         ],
