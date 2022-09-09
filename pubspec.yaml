@@ -78,6 +78,10 @@ flutter:
     - assets/img3.jpeg
     - assets/img4.jpeg
     - assets/img5.jpeg
+    - web/favicon.png
+    - web/icons/icon-192.png
+    - web/icons/icon-512.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

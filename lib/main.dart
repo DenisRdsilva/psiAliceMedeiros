@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (swidth<=600)[val = 0.85, exp = 1150];
     return Scaffold(
       key: scaffoldKey,
-      drawer: Drawer(width: swidth*val, backgroundColor: Color.fromARGB(255, 210, 189, 221),
+      drawer: Drawer(width: swidth*val, backgroundColor: Color.fromARGB(255, 229, 204, 201),
         child: Row(children: [
           Container(width: swidth*val*0.025, height: sheight, color: Color.fromARGB(255, 70, 41, 90)),
           Container(width: swidth*val*0.95, child: Column(children: [
@@ -188,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(height: 350, width: swidth,
               child: Row(children: [
                 Container( height: 350, width: swidth*0.025, color: Color.fromARGB(255, 70, 41, 90)),
-                  Container(width: swidth*0.30, height: 350, color: Color.fromARGB(255, 200, 180, 210),
+                  Container(width: swidth*0.30, height: 350, color: Color.fromARGB(255, 229, 204, 201),
                     child: Center(child: TextButton(onPressed: () => scaffoldKey.currentState?.openDrawer(), child: 
                       Container(width: swidth*0.30, height: 350, child: Row(children: [
                         Container(width: 80, height: 80, child: Image.asset('assets/Logo1.png', fit: BoxFit.cover)),
@@ -198,7 +198,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ))),
                 Container(height: 350, width: (16/9)*350, 
                   child: CustomVideo()),
-              Container( height: 350, width: swidth*0.19445, color:Color.fromARGB(255, 200, 180, 210), padding: EdgeInsets.only(left: 20), alignment: Alignment.centerRight, child: Column(children: [
+              Container( height: 350, width: swidth*0.19445, color: Color.fromARGB(255, 229, 204, 201), padding: EdgeInsets.only(left: 20), alignment: Alignment.centerRight, child: Column(children: [
                 Container(margin: EdgeInsets.only(top: 105), width:swidth*0.19, height: 120,
                   child: Text('“Desbravando a dor e a delícia de tornar-se adulto.”', style: 
                     GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 28, fontStyle: FontStyle.italic))),
@@ -214,7 +214,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(height: 701, width: swidth, margin: EdgeInsets.only(top: 20),
                 child: Column(children: [
                 Container(height: 5, width: swidth, color: Color.fromARGB(255, 70, 41, 90)),    
-                  Container(width: swidth, height: 150, color: Color.fromARGB(255, 200, 180, 210),
+                  Container(width: swidth, height: 150, color: Color.fromARGB(255, 229, 204, 201),
                     child: Center(child: TextButton(onPressed: () => scaffoldKey.currentState?.openDrawer(), child: 
                       Container(width: swidth, height: 150, child: Row(children: [
                         Spacer(flex: 1),
@@ -223,7 +223,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Spacer(flex: 10)]))))),
                   Container(height: 351, width: swidth, color: Color.fromARGB(255, 70, 41, 90),
                     child: CustomVideo()),
-                  Container(height: 130, width: swidth, color:Color.fromARGB(255, 200, 180, 210), child:
+                  Container(height: 130, width: swidth, color: Color.fromARGB(255, 229, 204, 201), child:
                     Row(children: [
                       Spacer(flex: 5),
                       Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
@@ -241,7 +241,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Container(height: 601, width: swidth, margin: EdgeInsets.only(top: 20),
                   child: Column(children: [
                   Container(height: 5, width: swidth, color: Color.fromARGB(255, 70, 41, 90)),
-                  Container(width: swidth, height: 100, color: Color.fromARGB(255, 200, 180, 210),
+                  Container(width: swidth, height: 100, color: Color.fromARGB(255, 229, 204, 201),
                     child: Center(child: TextButton(onPressed: () => scaffoldKey.currentState?.openDrawer(), child: 
                       Container(width: swidth, height: 100, child: Row(children: [
                         Spacer(flex: 1),
@@ -250,7 +250,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Spacer(flex: 10)]))))),
                   Container(height: 351, width: swidth, color: Color.fromARGB(255, 70, 41, 90),
                     child: CustomVideo()),
-                  Container(height: 100, width: swidth, color:Color.fromARGB(255, 200, 180, 210), child: Column(
+                  Container(height: 100, width: swidth, color: Color.fromARGB(255, 229, 204, 201), child: Column(
                     mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
                       Container(width: swidth, height: 60, margin: EdgeInsets.only(right: 20, left: 20),
                         child: Center(child: Text('“Desbravando a dor e a delícia de tornar-se adulto.”', style: 
@@ -272,7 +272,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Row(children: [
                   Spacer(),
                   Container(margin: EdgeInsets.only(top: 70, bottom: 40), 
-                  width: swidth*0.85, height: 210,  decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
+                  width: swidth*0.85, height: 210,  decoration: BoxDecoration(color: Color.fromARGB(255, 229, 204, 201),
                   borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90)),
                   boxShadow: [BoxShadow(
                     color: Colors.blueGrey.withOpacity(0.5), spreadRadius: 10, blurRadius: 10, offset: Offset(0, 3))]),         
@@ -287,7 +287,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ]),
                 Row(children: [
                   Spacer(),
-                  Container(width: swidth*0.85, height: 360,  decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
+                  Container(width: swidth*0.85, height: 360,  decoration: BoxDecoration(color:Color.fromARGB(255, 229, 204, 201),
                   borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90)),
                   boxShadow: [BoxShadow(
                     color: Colors.blueGrey.withOpacity(0.5), spreadRadius: 10, blurRadius: 10, offset: Offset(0, 3))]),         
@@ -303,8 +303,8 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ]else...[
           Column(children: [
-              Container(margin: EdgeInsets.only(top: 60), 
-                width: swidth*0.95, height: 60, decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
+              Container(margin: EdgeInsets.only(top: 60), padding: EdgeInsets.only(top: 13, bottom: 10), 
+                width: swidth*0.95, height: 60, decoration: BoxDecoration(color: Color.fromARGB(255, 229, 204, 201),
                 borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90)),
                 boxShadow: [BoxShadow(
                   color: Colors.blueGrey.withOpacity(0.5), spreadRadius: 5, blurRadius: 5, offset: Offset(0, 3))]),    
@@ -315,8 +315,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               Container(margin: EdgeInsets.only(top: 20, right: 15, left: 15, bottom: 40), child: Text('Psicoterapia individual nas modalidades presencial e online através de plataforma segura. Ambas semanais com duração de até 60 minutos.  No primeiro caso, nos encontramos pessoalmente em meu consultório. Já para o atendimento online, você pode escolher onde estará no momento da sessão, basta ter um computador, celular ou tablet com acesso à internet.', textAlign: TextAlign.justify, style: 
                       GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18), maxLines: 11)),
-              Container(
-                width: swidth*0.95, height: 60, decoration: BoxDecoration(color: Color.fromARGB(255, 210, 189, 221),
+              Container(padding: EdgeInsets.only(top: 13, bottom: 10), 
+                width: swidth*0.95, height: 60, decoration: BoxDecoration(color:Color.fromARGB(255, 229, 204, 201),
                 borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90)),
                 boxShadow: [BoxShadow(
                     color: Colors.blueGrey.withOpacity(0.5), spreadRadius: 5, blurRadius: 5, offset: Offset(0, 3))]),
@@ -363,7 +363,7 @@ class _MyHomePageState extends State<MyHomePage> {
               )
             ),
             Column(children:[
-              Container(width: swidth*0.5, padding: EdgeInsets.only(top: 5), height: 550, color: Color.fromARGB(255, 200, 180, 210), child:
+              Container(width: swidth*0.5, padding: EdgeInsets.only(top: 5), height: 550, color:  Color.fromARGB(255, 229, 204, 201), child:
                 Column(children: [
                   Center(child: Container(width: 600, height: 200, 
                     child: Image.asset('assets/Logo2.png', fit: BoxFit.cover)
@@ -419,7 +419,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               )
             )),
-              Container(width: swidth, padding: EdgeInsets.only(top: 5), height: 550, color: Color.fromARGB(255, 200, 180, 210), child:
+              Container(width: swidth, padding: EdgeInsets.only(top: 5), height: 550, color: Color.fromARGB(255, 229, 204, 201), child:
                 Column(children: [
                   Center(child: Container(width: 600, height: 200, 
                     child: Image.asset('assets/Logo2.png', fit: BoxFit.cover)
