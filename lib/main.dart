@@ -309,26 +309,26 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ]else...[
           Column(children: [
-              Container(margin: EdgeInsets.only(top: 60), padding: EdgeInsets.only(top: 13, bottom: 10), 
+              Container(margin: EdgeInsets.only(top: 60), 
                 width: swidth*0.95, height: 60, decoration: BoxDecoration(color: Color.fromARGB(255, 229, 204, 201),
                 borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90)),
                 boxShadow: [BoxShadow(
                   color: Colors.blueGrey.withOpacity(0.5), spreadRadius: 5, blurRadius: 5, offset: Offset(0, 3))]),    
                 child: TextButton (onPressed: () {}, child: 
                     Container(alignment: Alignment.center, child: Text('SERVIÇOS', style: 
-                      GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 22))),
+                      GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 20))),
                   )
                 ),
               Container(margin: EdgeInsets.only(top: 20, right: 15, left: 15, bottom: 40), child: Text('Psicoterapia individual nas modalidades presencial e online através de plataforma segura. Ambas semanais com duração de até 60 minutos.  No primeiro caso, nos encontraremos pessoalmente em meu consultório. Já para o atendimento online, você pode escolher onde estará no momento da sessão, basta ter um computador, celular ou tablet com acesso à internet.', textAlign: TextAlign.justify, style: 
                       GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18), maxLines: 11)),
-              Container(padding: EdgeInsets.only(top: 13, bottom: 10), 
+              Container(
                 width: swidth*0.95, height: 60, decoration: BoxDecoration(color:Color.fromARGB(255, 229, 204, 201),
                 borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90)),
                 boxShadow: [BoxShadow(
                     color: Colors.blueGrey.withOpacity(0.5), spreadRadius: 5, blurRadius: 5, offset: Offset(0, 3))]),
                 child: TextButton (onPressed: () {}, child:
                     Container(alignment: Alignment.center, child: Text('POR QUE FAZER PSICOTERAPIA?', style: 
-                      GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 22))),
+                      GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 20))),
               )),
               Container(margin: EdgeInsets.only(top: 20, right: 20, left: 15, bottom: 70), child: Text('Olhar para si mesmo é, muitas vezes, desafiador. Pode provocar medo, insegurança, aquele pensamento de “depois eu penso nisso, agora não”. Mas e quando aquilo que foi deixado para depois começa a nos atrapalhar, provocando ansiedade, tristeza e a sensação de que precisamos falar com alguém sobre aquele assunto? É a partir desse momento que a psicoterapia poderia ajudar. Pode parecer estranho falar sobre si com alguém que não conhecemos. Com o tempo, passamos a confiar no psicólogo que nos acompanha, nos sentimos à vontade para falar sobre os assuntos mais delicados, não nos sentimos julgados, mas acolhidos. Semana após semana percebemos as contribuições das sessões em nosso dia a dia, até que em conjunto com o nosso terapeuta decidimos que naquele momento já podemos seguir sem o acompanhamento profissional, que já conseguimos lidar melhor com os acontecimentos de nossas vidas. Deixamos de nos ver semanalmente, mas cientes de que podemos, a qualquer momento, escolher voltar. Essa é a beleza da psicoterapia.', textAlign: TextAlign.justify, style: 
                 GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18), overflow: TextOverflow.clip)),
@@ -342,7 +342,11 @@ class _MyHomePageState extends State<MyHomePage> {
               FlutterMap(
                 options: MapOptions(
                     center: LatLng(-5.820560, -35.209990),
+                    minZoom: 15,
                     zoom: 17,
+                    maxZoom: 18,
+                    enableScrollWheel: false,
+                    pinchZoomThreshold: 0.5,
                 ),
                 layers: [
                     TileLayerOptions(
@@ -399,7 +403,11 @@ class _MyHomePageState extends State<MyHomePage> {
               FlutterMap(
                 options: MapOptions(
                     center: LatLng(-5.820560, -35.209990),
+                    minZoom: 15,
                     zoom: 17,
+                    maxZoom: 18,
+                    enableScrollWheel: false,
+                    pinchZoomThreshold: 0.5,
                 ),
                 layers: [
                     TileLayerOptions(
@@ -473,7 +481,7 @@ _launchURL1() async { //   <-- link 2 cabeçalho
   
 class CustomVideo extends StatelessWidget {
   final _controller = YoutubePlayerController(
-  initialVideoId: 'oH3omNV9UUU',
+  initialVideoId: 'Jz8QbVS2BSA',
   params: YoutubePlayerParams(
     autoPlay: true,
     mute: false,
