@@ -47,7 +47,9 @@ class _MyHomePageState extends State<MyHomePage> {
     if (swidth<=1000)[
     if (swidth>800)[val = 0.4, exp = 1330]];
     if (swidth<=800)[
-    if (swidth>600)[val = 0.6, exp = 1200]];
+    if (swidth>700)[val = 0.5, exp = 1200]];
+    if (swidth<=700)[
+    if (swidth>600)[val = 0.6, exp = 1175]];
     if (swidth<=600)[val = 0.85, exp = 1150];
     return Scaffold(
       key: scaffoldKey,
@@ -62,12 +64,12 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(margin: EdgeInsets.only(left: 10, right: 10), alignment: Alignment.centerLeft, child: Text('Número: (84) 99123-3527', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w500))),
             Container(margin: EdgeInsets.only(left: 10, top: 15, bottom: 15, right: 10), alignment: Alignment.centerLeft, child: Text('E-mail: psicologaalicemedeiros@gmail.com', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w500))),
             Container(margin: EdgeInsets.only(left: 10, right: 10), alignment: Alignment.centerLeft, child: Text('Clique no ícone do WhatsApp para informações e agendamentos.', textAlign: TextAlign.left, style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w500))),  
-            Row(children: [
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Spacer(),
-              Container(margin: EdgeInsets.only(top: 30), padding: EdgeInsets.only(top: 5, bottom: 5), alignment: Alignment.center,
+              Container(margin: EdgeInsets.only(top: 30), alignment: Alignment.center,
                 width: 70, height: 70, decoration: BoxDecoration(color:Colors.green, borderRadius: BorderRadius.circular(25)), 
                 child: TextButton (onPressed: _launchURL1,
-                  child: Icon(FontAwesomeIcons.whatsapp, color:Colors.white, size: 60))),
+                  child: Icon(FontAwesomeIcons.whatsapp, color:Colors.white, size: 55))),
               Spacer()
             ]),
         ])),
@@ -76,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView( 
       physics: BouncingScrollPhysics(),
       child: Column(children: [
-        if (swidth>500)...[
+        if (swidth>550)...[
         Container(height: 50, width: swidth, 
           color:  Color.fromARGB(255, 70, 41, 90),
           child: Row(children: [
