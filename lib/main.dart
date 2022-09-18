@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (swidth>700)[val = 0.5, exp = 1200]];
     if (swidth<=700)[
     if (swidth>600)[val = 0.6, exp = 1175]];
-    if (swidth<=600)[val = 0.85, exp = 1150, spa = sheight*.02];
+    if (swidth<=600)[val = 0.85, exp = 1150, spa = sheight*.005];
     return Scaffold(
       key: scaffoldKey,
       drawer: Drawer(width: swidth*val, backgroundColor: Color.fromARGB(255, 229, 204, 201),
