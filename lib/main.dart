@@ -1,7 +1,9 @@
 import 'dart:ui';
 
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
@@ -9,8 +11,6 @@ import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:sizer/sizer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,6 +36,38 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  final ScrollController _controller = ScrollController();
+  final FocusNode _focusNode = FocusNode();
+
+  void _handleKeyEvent(RawKeyEvent event) {
+      var offset = _controller.offset;
+        if (event.logicalKey == LogicalKeyboardKey.arrowUp) {
+            setState(() {
+                if (kReleaseMode) {
+                    _controller.animateTo(offset - 200, duration: Duration(milliseconds: 30), curve: Curves.ease);
+                } else {
+                    _controller.animateTo(offset - 200, duration: Duration(milliseconds: 30), curve: Curves.ease);
+                }
+            });
+        }
+        else if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
+            setState(() {
+                if (kReleaseMode) {
+                    _controller.animateTo(offset + 200, duration: Duration(milliseconds: 30), curve: Curves.ease);
+                } else {
+                    _controller.animateTo(offset + 200, duration: Duration(milliseconds: 30), curve: Curves.ease);
+                }
+        });
+     }
+  }
+
+  @override
+    void dispose() {
+        _focusNode.dispose();
+        super.dispose();
+  }
+
   var scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -86,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(width: 135, height: 50, alignment: Alignment.centerLeft, child: TextButton(onPressed: () => scaffoldKey.currentState?.openDrawer(), 
               child: Row(children: [
                 Icon(Icons.menu, color: Colors.white, size: 25),
-                Text(' Sobre mim', style: TextStyle(color: Colors.white, fontSize: 17, fontFamily: 'Courier'))]))),
+                Text(' Sobre mim', style: TextStyle(color: Colors.white, fontSize: 17))]))),
             Spacer(flex:100),
             Container(alignment: Alignment.centerRight, padding: EdgeInsets.only(left: swidth*0.025), child:
               TextButton (onPressed: _launchURL,
