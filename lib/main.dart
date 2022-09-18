@@ -64,10 +64,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(margin: EdgeInsets.only(left: 10, right: 10), alignment: Alignment.centerLeft, child: Text('Clique no ícone do WhatsApp para informações e agendamentos.', textAlign: TextAlign.left, style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w500))),  
             Row(children: [
               Spacer(),
-              Container(margin: EdgeInsets.only(top: 30), alignment: Alignment.center,
+              Container(margin: EdgeInsets.only(top: 30), 
                 width: 70, height: 70, decoration: BoxDecoration(color:Colors.green, borderRadius: BorderRadius.circular(25)), 
                 child: TextButton (onPressed: _launchURL1,
-                  child: Icon(FontAwesomeIcons.whatsapp, color:Colors.white, size: 60))),
+                  child: Center(child: Icon(FontAwesomeIcons.whatsapp, color:Colors.white, size: 60)))),
               Spacer()
             ]),
         ])),
