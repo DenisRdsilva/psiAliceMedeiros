@@ -37,43 +37,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  final ScrollController _controller = ScrollController();
-  final FocusNode _focusNode = FocusNode();
-
-  void _handleKeyEvent(RawKeyEvent event) {
-    var offset = _controller.offset;    //Getting current position
-    if (event.logicalKey.debugName == "Arrow Down")  {
-      setState(() {
-        if (kReleaseMode) {
-          //This block only runs when the application was compiled in release mode.
-          _controller.animateTo(offset + 50,
-              duration: Duration(milliseconds: 200), curve: Curves.ease);
-        } else {
-          // This will only print useful information in debug mode.
-          // print(_controller.position); to get information..
-          _controller.animateTo(offset + 50,
-              duration: Duration(milliseconds: 200), curve: Curves.ease);
-        }
-      });
-    } else if (event.logicalKey.debugName == "Arrow Up"){
-      setState(() {
-        if (kReleaseMode) {
-          _controller.animateTo(offset - 50,
-              duration: Duration(milliseconds: 200), curve: Curves.ease);
-        } else {
-          _controller.animateTo(offset - 50,
-              duration: Duration(milliseconds: 200), curve: Curves.ease);
-        }
-      });
-    }
-  }
-
-  @override
-    void dispose() {
-        _focusNode.dispose();
-        super.dispose();
-  }
-
   var scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -114,12 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ])),
         Container(width: swidth*val*0.025, height: sheight, alignment: Alignment.centerRight, color: Color.fromARGB(255, 70, 41, 90)),
       ])),
-      body: RawKeyboardListener(
-        autofocus: true,
-        focusNode: _focusNode,
-        onKey: _handleKeyEvent,
-        child:SingleChildScrollView( 
-        controller: _controller,
+      body: SingleChildScrollView( 
         physics: BouncingScrollPhysics(),
         child: Column(children: [
         if (swidth>550)...[
@@ -154,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(width: 135, height: 50, alignment: Alignment.centerLeft, child: TextButton(onPressed: () => scaffoldKey.currentState?.openDrawer(), 
               child: Row(children: [
                 Icon(Icons.menu, color: Colors.white, size: 25),
-                Text(' Sobre mim', style: GoogleFonts.raleway(color: Colors.white, fontSize: 17))]))),
+                Text(' Sobre mim', style: TextStyle(color: Colors.white, fontSize: 17))]))),
             Spacer(flex:100),
             Container(alignment: Alignment.centerRight, width: 40, child:
               TextButton (onPressed: _launchURL,
@@ -507,7 +465,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ])
         ]],
       )), 
-    ));
+    );
   }
 }
 
