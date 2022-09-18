@@ -107,9 +107,13 @@ class _MyHomePageState extends State<MyHomePage> {
         ])),
         Container(width: swidth*val*0.025, height: sheight, alignment: Alignment.centerRight, color: Color.fromARGB(255, 70, 41, 90)),
       ])),
-      body: SingleChildScrollView( 
-      physics: BouncingScrollPhysics(),
-      child: Column(children: [
+      body: RawKeyboardListener(
+        autofocus: true,
+        focusNode: _focusNode,
+        onKey: _handleKeyEvent,
+        child:SingleChildScrollView( 
+        physics: BouncingScrollPhysics(),
+        child: Column(children: [
         if (swidth>550)...[
         Container(height: 50, width: swidth, 
           color:  Color.fromARGB(255, 70, 41, 90),
@@ -495,7 +499,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ])
         ]],
       )), 
-    );
+    ));
   }
 }
 
