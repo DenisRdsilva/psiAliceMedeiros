@@ -41,25 +41,31 @@ class _MyHomePageState extends State<MyHomePage> {
   final FocusNode _focusNode = FocusNode();
 
   void _handleKeyEvent(RawKeyEvent event) {
-      var offset = _controller.offset;
-        if (event.logicalKey == LogicalKeyboardKey.arrowUp) {
-            setState(() {
-                if (kReleaseMode) {
-                    _controller.animateTo(offset - 200, duration: Duration(milliseconds: 30), curve: Curves.ease);
-                } else {
-                    _controller.animateTo(offset - 200, duration: Duration(milliseconds: 30), curve: Curves.ease);
-                }
-            });
+    var offset = _controller.offset;    //Getting current position
+    if (event.logicalKey.debugName == "Arrow Down")  {
+      setState(() {
+        if (kReleaseMode) {
+          //This block only runs when the application was compiled in release mode.
+          _controller.animateTo(offset + 50,
+              duration: Duration(milliseconds: 200), curve: Curves.ease);
+        } else {
+          // This will only print useful information in debug mode.
+          // print(_controller.position); to get information..
+          _controller.animateTo(offset + 50,
+              duration: Duration(milliseconds: 200), curve: Curves.ease);
         }
-        else if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
-            setState(() {
-                if (kReleaseMode) {
-                    _controller.animateTo(offset + 200, duration: Duration(milliseconds: 30), curve: Curves.ease);
-                } else {
-                    _controller.animateTo(offset + 200, duration: Duration(milliseconds: 30), curve: Curves.ease);
-                }
-        });
-     }
+      });
+    } else if (event.logicalKey.debugName == "Arrow Up"){
+      setState(() {
+        if (kReleaseMode) {
+          _controller.animateTo(offset - 50,
+              duration: Duration(milliseconds: 200), curve: Curves.ease);
+        } else {
+          _controller.animateTo(offset - 50,
+              duration: Duration(milliseconds: 200), curve: Curves.ease);
+        }
+      });
+    }
   }
 
   @override
@@ -75,6 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
     double sheight = MediaQuery.of(context).size.height;
     double val = 0;
     double exp = 0;
+    double spa = 0;
     if (swidth>1000)[val = 0.3, exp = 1400];
     if (swidth<=1000)[
     if (swidth>800)[val = 0.4, exp = 1330]];
@@ -82,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (swidth>700)[val = 0.5, exp = 1200]];
     if (swidth<=700)[
     if (swidth>600)[val = 0.6, exp = 1175]];
-    if (swidth<=600)[val = 0.85, exp = 1150];
+    if (swidth<=600)[val = 0.85, exp = 1150, spa = sheight*.02];
     return Scaffold(
       key: scaffoldKey,
       drawer: Drawer(width: swidth*val, backgroundColor: Color.fromARGB(255, 229, 204, 201),
@@ -98,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(margin: EdgeInsets.only(left: 10, right: 10), alignment: Alignment.centerLeft, child: Text('Clique no ícone do WhatsApp para informações e agendamentos.', textAlign: TextAlign.left, style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w500))),  
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Spacer(),
-              Center(child: Container(margin: EdgeInsets.only(top: 30), alignment: Alignment.center,
+              Center(child: Container(margin: EdgeInsets.only(top: 30), padding: EdgeInsets.only(bottom: spa, top: spa), alignment: Alignment.center,
                 width: 70, height: 70, decoration: BoxDecoration(color:Colors.green, borderRadius: BorderRadius.circular(25)), 
                 child: TextButton (onPressed: _launchURL1,
                   child: Icon(FontAwesomeIcons.whatsapp, color:Colors.white, size: 55)))),
@@ -112,6 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
         focusNode: _focusNode,
         onKey: _handleKeyEvent,
         child:SingleChildScrollView( 
+        controller: _controller,
         physics: BouncingScrollPhysics(),
         child: Column(children: [
         if (swidth>550)...[
