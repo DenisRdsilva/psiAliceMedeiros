@@ -98,10 +98,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(margin: EdgeInsets.only(left: 10, right: 10), alignment: Alignment.centerLeft, child: Text('Clique no ícone do WhatsApp para informações e agendamentos.', textAlign: TextAlign.left, style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w500))),  
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Spacer(),
-              Container(margin: EdgeInsets.only(top: 30), alignment: Alignment.center,
+              Center(child: Container(margin: EdgeInsets.only(top: 30), alignment: Alignment.center,
                 width: 70, height: 70, decoration: BoxDecoration(color:Colors.green, borderRadius: BorderRadius.circular(25)), 
                 child: TextButton (onPressed: _launchURL1,
-                  child: Icon(FontAwesomeIcons.whatsapp, color:Colors.white, size: 55))),
+                  child: Icon(FontAwesomeIcons.whatsapp, color:Colors.white, size: 55)))),
               Spacer()
             ]),
         ])),
@@ -169,7 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
         if (swidth>800)...[
         Container(width: swidth, height: 600, color: Color.fromARGB(255, 70, 41, 90), 
-          margin: EdgeInsets.only(bottom: 120), child: Column(children: [
+          margin: EdgeInsets.only(bottom: 70), child: Column(children: [
             Center(child: ImageSlideshow(                
               width: swidth*0.95, /// Width of the [ImageSlideshow].
               height: 600, /// Height of the [ImageSlideshow].
