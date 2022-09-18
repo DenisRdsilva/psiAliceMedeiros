@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Psicóloga Alice Medeiros',
-      home: const MyHomePage(title: 'Site Alice'),
+      home: const MyHomePage(title: 'Psicóloga Alice Medeiros'),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -61,11 +61,13 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(margin: EdgeInsets.only(left: 10, top: 15, bottom: 15, right: 10), alignment: Alignment.centerLeft, child: Text('CRP: 17/3977', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w500))),
             Container(margin: EdgeInsets.only(left: 10, right: 10), alignment: Alignment.centerLeft, child: Text('Número: (84) 99123-3527', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w500))),
             Container(margin: EdgeInsets.only(left: 10, top: 15, bottom: 15, right: 10), alignment: Alignment.centerLeft, child: Text('E-mail: psicologaalicemedeiros@gmail.com', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w500))),
-            Container(margin: EdgeInsets.only(left: 10, right: 10), alignment: Alignment.centerLeft, child: Text('Clique no ícone do WhatsApp para informações e agendamentos', textAlign: TextAlign.justify, style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w500))),  
+            Container(margin: EdgeInsets.only(left: 10, right: 10), alignment: Alignment.centerLeft, child: Text('Clique no ícone do WhatsApp para informações e agendamentos.', textAlign: TextAlign.justify, style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w500))),  
             Row(children: [
               Spacer(),
-              TextButton (onPressed: _launchURL1,
-                child: Container(margin: EdgeInsets.only(left: 10, top: 25, bottom: 15, right: 10), alignment: Alignment.center, width: 300, child: Icon(FontAwesomeIcons.whatsapp, color: Colors.green, size: 70))),
+              Container(margin: EdgeInsets.only(top: 30), padding: EdgeInsets.only(bottom: 2.1),
+                width: 80, height: 80, decoration: BoxDecoration(color:Colors.green, borderRadius: BorderRadius.circular(25)), 
+                child: TextButton (onPressed: _launchURL1,
+                  child: Icon(FontAwesomeIcons.whatsapp, color:Colors.white, size: 65))),
               Spacer()
             ]),
         ])),
@@ -82,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(width: 135, height: 50, alignment: Alignment.centerLeft, child: TextButton(onPressed: () => scaffoldKey.currentState?.openDrawer(), 
               child: Row(children: [
                 Icon(Icons.menu, color: Colors.white, size: 25),
-                Text(' Sobre mim', style: GoogleFonts.raleway(color: Colors.white, fontSize: 17))]))),
+                Text(' Sobre mim', style: TextStyle(color: Colors.white, fontSize: 17, fontFamily: 'Courier'))]))),
             Spacer(flex:100),
             Container(alignment: Alignment.centerRight, padding: EdgeInsets.only(left: swidth*0.025), child:
               TextButton (onPressed: _launchURL,
@@ -193,26 +195,28 @@ class _MyHomePageState extends State<MyHomePage> {
           if (swidth>(1365))...[
             Container(height: 350, width: swidth,
               child: Row(children: [
-                Container( height: 350, width: swidth*0.025, color: Color.fromARGB(255, 70, 41, 90)),
-                  Container(width: swidth*0.30, height: 350, color: Color.fromARGB(255, 229, 204, 201),
+                Container( height: 350, width: swidth*0.02, color: Color.fromARGB(255, 70, 41, 90)),
+                  Container(width: swidth*0.28, height: 350, color: Color.fromARGB(255, 229, 204, 201),
                     child: Center(child: TextButton(onPressed: () => scaffoldKey.currentState?.openDrawer(), child: 
-                      Container(width: swidth*0.30, height: 350, child: Row(children: [
+                      Container(width: swidth*0.28, height: 350, child: Row(children: [
                         Container(width: 80, height: 80, child: Image.asset('assets/Logo1.png', fit: BoxFit.cover)),
-                        Text('Quem sou eu?', style: GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 42)
+                        Text('Quem sou eu?', style: GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 37)
                       )]
                     ))
                   ))),
-                Container(height: 350, width: (16/9)*350, 
-                  child: CustomVideo()),
-              Container( height: 350, width: swidth*0.19445, color: Color.fromARGB(255, 229, 204, 201), padding: EdgeInsets.only(left: 20), alignment: Alignment.centerRight, child: Column(children: [
+              Container(height: 350, width: swidth*0.015, color: Color.fromARGB(255, 70, 41, 90)),
+              Container(height: 350, width: (16/9)*350, 
+                child: CustomVideo()),
+              Container(height: 350, width: swidth*0.015, color: Color.fromARGB(255, 70, 41, 90)),
+              Container( height: 350, width: swidth*0.19445, color: Color.fromARGB(255, 229, 204, 201), padding: EdgeInsets.only(left: 15, right: 10), alignment: Alignment.centerRight, child: Column(children: [
                 Container(margin: EdgeInsets.only(top: 105), width:swidth*0.19, height: 120,
                   child: Text('“Desbravando a dor e a delícia de tornar-se adulto.”', style: 
-                    GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 28, fontStyle: FontStyle.italic))),
+                    GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 26, fontStyle: FontStyle.italic))),
                 Container(width:swidth*0.19, height: 40, 
                   child: Text('Alice Medeiros', style: 
-                    GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 24))),
+                    GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 22))),
                 ])),
-              Container( height: 350, width: swidth*0.025, color: Color.fromARGB(255, 70, 41, 90)),
+              Container( height: 350, width: swidth*0.02, color: Color.fromARGB(255, 70, 41, 90)),
             ])),
           ],
           if (swidth<=(1365))...[
@@ -241,7 +245,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 22)))]),
                       Spacer(flex: 5),
                     ])),
-                  Container( height: 5, width: swidth, margin: EdgeInsets.only(bottom: 40), color: Color.fromARGB(255, 70, 41, 90)),
+                  Container( height: 5, width: swidth, margin: EdgeInsets.only(bottom: 20), color: Color.fromARGB(255, 70, 41, 90)),
                 ]))
                 ]else...[
                 Container(height: 601, width: swidth, margin: EdgeInsets.only(top: 20),
@@ -309,7 +313,7 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ]else...[
           Column(children: [
-              Container(margin: EdgeInsets.only(top: 60), 
+              Container(margin: EdgeInsets.only(top: 50), 
                 width: swidth*0.95, height: 60, decoration: BoxDecoration(color: Color.fromARGB(255, 229, 204, 201),
                 borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90)),
                 boxShadow: [BoxShadow(
@@ -438,11 +442,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   Center(child: Container(width: 600, height: 200, 
                     child: Image.asset('assets/Logo2.png', fit: BoxFit.cover)
                   )),
-                  Container(margin: EdgeInsets.only(top: 20, bottom: 15), alignment: Alignment.centerLeft, child: Text('> Endereço:', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.bold))),
-                  Container(margin: EdgeInsets.only(bottom: 30), alignment: Alignment.centerLeft, child: Text('Avenida Amintas Barros, 3700, Corporate Tower Center, Torre B', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w600))),
-                  Container(margin: EdgeInsets.only(top: 5, bottom: 15), alignment: Alignment.centerLeft, child: Text('> Contatos para agendamento:', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.bold))),
-                  Container(alignment: Alignment.centerLeft, child: Text('Número: (84) 99123-3527', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w600))),
-                  Container(margin: EdgeInsets.only(top: 15, bottom: 15), alignment: Alignment.centerLeft, child: Text('E-mail: psicologaalicemedeiros@gmail.com', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w600))),
+                  Container(margin: EdgeInsets.only(right: 20, left: 20, top: 20, bottom: 15), alignment: Alignment.centerLeft, child: Text('> Endereço:', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.bold))),
+                  Container(margin: EdgeInsets.only(right: 20, left: 20, bottom: 30), alignment: Alignment.centerLeft, child: Text('Avenida Amintas Barros, 3700, Corporate Tower Center, Torre B', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w600))),
+                  Container(margin: EdgeInsets.only(right: 20, left: 20, top: 5, bottom: 15), alignment: Alignment.centerLeft, child: Text('> Contatos para agendamento:', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.bold))),
+                  Container(margin: EdgeInsets.only(right: 20, left: 20), alignment: Alignment.centerLeft, child: Text('Número: (84) 99123-3527', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w600))),
+                  Container(margin: EdgeInsets.only(right: 20, left: 20, top: 15, bottom: 15), alignment: Alignment.centerLeft, child: Text('E-mail: psicologaalicemedeiros@gmail.com', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w600))),
                   Row(children: [
                     Container(width: 30, height: 30, margin: EdgeInsets.only(left: 45), child:
                       TextButton (onPressed: _launchURL, child:
