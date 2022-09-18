@@ -65,9 +65,9 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(children: [
               Spacer(),
               Container(margin: EdgeInsets.only(top: 30), alignment: Alignment.center,
-                width: 80, height: 80, decoration: BoxDecoration(color:Colors.green, borderRadius: BorderRadius.circular(25)), 
+                width: 70, height: 70, decoration: BoxDecoration(color:Colors.green, borderRadius: BorderRadius.circular(25)), 
                 child: TextButton (onPressed: _launchURL1,
-                  child: Icon(FontAwesomeIcons.whatsapp, color:Colors.white, size: 65))),
+                  child: Icon(FontAwesomeIcons.whatsapp, color:Colors.white, size: 60))),
               Spacer()
             ]),
         ])),
