@@ -295,7 +295,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   boxShadow: [BoxShadow(
                     color: Colors.blueGrey.withOpacity(0.5), spreadRadius: 10, blurRadius: 10, offset: Offset(0, 3))]),         
                   child: TextButton (onPressed: () {}, child:  Column(children: [
-                    Container(margin: EdgeInsets.only(right: 20, left: 20), child: Text('SERVIÇOS', style: 
+                    Container(margin: EdgeInsets.only(top: 30, right: 20, left: 20), child: Text('SERVIÇOS', style: 
                       GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 28))),
                     Container(margin: EdgeInsets.only(top: 25, right: 20, left: 20), child: AutoSizeText('Psicoterapia individual nas modalidades presencial e online através de plataforma segura. Ambas semanais com duração de até 60 minutos.  No primeiro caso, nos encontraremos pessoalmente em meu consultório. Já para o atendimento online, você pode escolher onde estará no momento da sessão, basta ter um computador, celular ou tablet com acesso à internet.', textAlign: TextAlign.justify, style: 
                       GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 19)),
