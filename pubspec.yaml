@@ -40,8 +40,6 @@ dependencies:
   google_fonts: ^3.0.1
   flutter_map: ^2.2.0
   latlong2: ^0.8.1
-  auto_size_text: ^3.0.0
-  flutter_riverpod: ^1.0.4
 
 dev_dependencies:
   flutter_test:

@@ -1,9 +1,6 @@
 import 'dart:ui';
 
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
@@ -61,21 +58,21 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(width: swidth*val*0.025, height: sheight, color: Color.fromARGB(255, 70, 41, 90)),
           Container(width: swidth*val*0.95, child: Column(children: [
             Spacer(),
-            Container(margin: EdgeInsets.only(top: 25, bottom: 30), height: 250, width: 250, decoration: BoxDecoration(color: Color.fromARGB(255, 70, 41, 90), borderRadius: BorderRadius.circular(100)),
+            Container(margin: EdgeInsets.only(top: 25, bottom: 25), height: 250, width: 250, decoration: BoxDecoration(color: Color.fromARGB(255, 70, 41, 90), borderRadius: BorderRadius.circular(100)),
               child: CircleAvatar(radius: 100, backgroundImage: AssetImage('assets/pic.jpeg'))),
             Container(margin: EdgeInsets.only(left: 10, right: 10), alignment: Alignment.centerLeft, child: Text(
               'Realizo psicoterapia individual voltada ao público adulto jovem. Tem alguma dúvida ou deseja alguma informação? Entre em contato comigo, quem sabe eu posso lhe auxiliar?',
-              style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 14, fontWeight: FontWeight.w500))),
+              style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 15, fontWeight: FontWeight.w500))),
             Container(margin: EdgeInsets.only(left: 10, right: 10), alignment: Alignment.centerLeft, child: Text(
               'Até breve! ',
-              style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 14, fontWeight: FontWeight.w500))),
-            Container(margin: EdgeInsets.only(left: 10, top: 15, bottom: 15, right: 10), alignment: Alignment.centerLeft, child: Text('CRP: 17/3977', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 14, fontWeight: FontWeight.w500))),
-            Container(margin: EdgeInsets.only(left: 10, right: 10), alignment: Alignment.centerLeft, child: Text('Número: (84) 99123-3527', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 14, fontWeight: FontWeight.w500))),
-            Container(margin: EdgeInsets.only(left: 10, top: 15, bottom: 15, right: 10), alignment: Alignment.centerLeft, child: Text('E-mail: psicologaalicemedeiros@gmail.com', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 14, fontWeight: FontWeight.w500))),
-            Container(margin: EdgeInsets.only(left: 10, right: 10), alignment: Alignment.centerLeft, child: Text('Clique no ícone do WhatsApp para informações e agendamentos.', textAlign: TextAlign.left, style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w500))),  
+              style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 15, fontWeight: FontWeight.w500))),
+            Container(margin: EdgeInsets.only(left: 10, top: 15, bottom: 10, right: 10), alignment: Alignment.centerLeft, child: Text('CRP: 17/3977', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 15, fontWeight: FontWeight.w500))),
+            Container(margin: EdgeInsets.only(left: 10, right: 10), alignment: Alignment.centerLeft, child: Text('Telefone: (84) 99123-3527', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 15, fontWeight: FontWeight.w500))),
+            Container(margin: EdgeInsets.only(left: 10, top: 10, bottom: 10, right: 10), alignment: Alignment.centerLeft, child: Text('E-mail: psicologaalicemedeiros@gmail.com', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 15, fontWeight: FontWeight.w500))),
+            Container(margin: EdgeInsets.only(left: 10, right: 10), alignment: Alignment.centerLeft, child: Text('Clique no ícone do WhatsApp para informações e agendamentos.', textAlign: TextAlign.left, style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 15, fontWeight: FontWeight.w500))),  
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Spacer(),
-              Center(child: Container(margin: EdgeInsets.only(top: 25), alignment: Alignment.center,
+              Center(child: Container(margin: EdgeInsets.only(top: 20), alignment: Alignment.center,
                 width: 60, height: 60, decoration: BoxDecoration(color: Color.fromARGB(255, 70, 41, 90), borderRadius: BorderRadius.circular(25)), 
                 child: TextButton (onPressed: _launchURL1,
                   child: Image.asset('assets/whats.png', fit: BoxFit.fill)))),
@@ -289,76 +286,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
               ),  
             ]],
-          if (swidth>1100)...[
-          Container(margin: EdgeInsets.only(top: 2*pad), width: swidth, height: 810, child:
-              Column( crossAxisAlignment: CrossAxisAlignment.center, children: [
-                Row(children: [
-                  Spacer(),
-                  Container(margin: EdgeInsets.only(bottom: pad), 
-                  width: swidth*0.85, height: 70,  decoration: BoxDecoration(color: Color.fromARGB(255, 229, 204, 201),
-                  borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90)),
-                  boxShadow: [BoxShadow(
-                    color: Colors.blueGrey.withOpacity(0.5), spreadRadius: 10, blurRadius: 10, offset: Offset(0, 3))]),         
-                  child: ListView(children: [
-                    ExpansionTile(trailing: Icon(FontAwesomeIcons.plus, size: 13), title: ListView(shrinkWrap:true,
-                      children: [
-                        Container(padding: EdgeInsets.only(left: 8), child: Text("SERVIÇOS"))
-                      ]),
-                      children : [
-                        Align(alignment: Alignment.center, child: TextButton(onPressed: () {}, child: Container(width: swidth*0.8, padding: EdgeInsets.only(left: 16), child: 
-                        Text("Psicoterapia individual nas modalidades presencial e online através de plataforma segura. Ambas semanais com duração de até 60 minutos.  No primeiro caso, nos encontraremos pessoalmente em meu consultório. Já para o atendimento online, você pode escolher onde estará no momento da sessão, basta ter um computador, celular ou tablet com acesso à internet.", 
-                        style: GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18))))),
-                      ]),
-                  ])),
-                Spacer()
-                ]),
-                Row(children: [
-                  Spacer(),
-                  Container(width: swidth*0.85, height: 70,  decoration: BoxDecoration(color:Color.fromARGB(255, 229, 204, 201),
-                  borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90)),
-                  boxShadow: [BoxShadow(
-                    color: Colors.blueGrey.withOpacity(0.5), spreadRadius: 10, blurRadius: 10, offset: Offset(0, 3))]),         
-                  child: ListView(children: [
-                    ExpansionTile(trailing: Icon(FontAwesomeIcons.plus, size: 13), title: ListView(shrinkWrap:true,
-                      children: [
-                        Container(padding: EdgeInsets.only(left: 8), child: Text("POR QUE FAZER PSICOTERAPIA?"))
-                      ]),
-                      children : [
-                        Align(alignment: Alignment.center, child: TextButton(onPressed: () {}, child: 
-                        Container(width: swidth*0.8, padding: EdgeInsets.only(left: 16), child: 
-                        Text("Olhar para si mesmo é, muitas vezes, desafiador. Pode provocar medo, insegurança, aquele pensamento de “depois eu penso nisso, agora não”. Mas e quando aquilo que foi deixado para depois começa a nos atrapalhar, provocando ansiedade, tristeza e a sensação de que precisamos falar com alguém sobre aquele assunto? É a partir desse momento que a psicoterapia poderia ajudar. Pode parecer estranho falar sobre si com alguém que não conhecemos. Com o tempo, passamos a confiar no psicólogo que nos acompanha, nos sentimos à vontade para falar sobre os assuntos mais delicados, não nos sentimos julgados, mas acolhidos. Semana após semana percebemos as contribuições das sessões em nosso dia a dia, até que em conjunto com o nosso terapeuta decidimos que naquele momento já podemos seguir sem o acompanhamento profissional, que já conseguimos lidar melhor com os acontecimentos de nossas vidas. Deixamos de nos ver semanalmente, mas cientes de que podemos, a qualquer momento, escolher voltar. Essa é a beleza da psicoterapia.", 
-                        style: GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18))))),  
-                      ]),
-                  ])),
-                Spacer()
-              ])]))
+        if (swidth>1100)...[
+          Container(margin: EdgeInsets.only(top: pad*2, bottom: pad*2), child: 
+            serv(context)),
         ]else...[
-          Column(children: [
-              Container(margin: EdgeInsets.only(top: pad), 
-                width: swidth*0.95, height: 60, decoration: BoxDecoration(color: Color.fromARGB(255, 229, 204, 201),
-                borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90)),
-                boxShadow: [BoxShadow(
-                  color: Colors.blueGrey.withOpacity(0.5), spreadRadius: 5, blurRadius: 5, offset: Offset(0, 3))]),    
-                child: TextButton (onPressed: () {}, child: 
-                    Container(alignment: Alignment.center, child: Text('SERVIÇOS', style: 
-                      GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 20))),
-                  )
-                ),
-              Container(margin: EdgeInsets.only(top: 20, right: 15, left: 15, bottom: 40), child: Text('Psicoterapia individual nas modalidades presencial e online através de plataforma segura. Ambas semanais com duração de até 60 minutos.  No primeiro caso, nos encontraremos pessoalmente em meu consultório. Já para o atendimento online, você pode escolher onde estará no momento da sessão, basta ter um computador, celular ou tablet com acesso à internet.', textAlign: TextAlign.justify, style: 
-                      GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18), maxLines: 11)),
-              Container(
-                width: swidth*0.95, height: 60, decoration: BoxDecoration(color:Color.fromARGB(255, 229, 204, 201),
-                borderRadius: BorderRadius.circular(10), border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90)),
-                boxShadow: [BoxShadow(
-                    color: Colors.blueGrey.withOpacity(0.5), spreadRadius: 5, blurRadius: 5, offset: Offset(0, 3))]),
-                child: TextButton (onPressed: () {}, child:
-                    Container(alignment: Alignment.center, child: Text('POR QUE FAZER PSICOTERAPIA?', style: 
-                      GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 20))),
-              )),
-              Container(margin: EdgeInsets.only(top: 20, right: 20, left: 15, bottom: pad), child: Text('Olhar para si mesmo é, muitas vezes, desafiador. Pode provocar medo, insegurança, aquele pensamento de “depois eu penso nisso, agora não”. Mas e quando aquilo que foi deixado para depois começa a nos atrapalhar, provocando ansiedade, tristeza e a sensação de que precisamos falar com alguém sobre aquele assunto? É a partir desse momento que a psicoterapia poderia ajudar. Pode parecer estranho falar sobre si com alguém que não conhecemos. Com o tempo, passamos a confiar no psicólogo que nos acompanha, nos sentimos à vontade para falar sobre os assuntos mais delicados, não nos sentimos julgados, mas acolhidos. Semana após semana percebemos as contribuições das sessões em nosso dia a dia, até que em conjunto com o nosso terapeuta decidimos que naquele momento já podemos seguir sem o acompanhamento profissional, que já conseguimos lidar melhor com os acontecimentos de nossas vidas. Deixamos de nos ver semanalmente, mas cientes de que podemos, a qualquer momento, escolher voltar. Essa é a beleza da psicoterapia.', textAlign: TextAlign.justify, style: 
-                GoogleFonts.firaSans(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18), overflow: TextOverflow.clip)),
-              ]
-            )
+          Container(margin: EdgeInsets.only(top: pad*2, bottom: pad*2), child: 
+            serv(context)),
           ],
         if (swidth>800)...[
         Container(height: 600, child: 
@@ -406,7 +339,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(margin: EdgeInsets.only(left: 55, top: 20, bottom: 15), alignment: Alignment.centerLeft, child: Text('> Endereço:', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.bold))),
                   Container(margin: EdgeInsets.only(left: 70, bottom: 30), alignment: Alignment.centerLeft, child: Text('Avenida Amintas Barros, 3700, Corporate Tower Center, Torre B', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w600))),
                   Container(margin: EdgeInsets.only(left: 55, top: 5, bottom: 15), alignment: Alignment.centerLeft, child: Text('> Contatos para agendamento:', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.bold))),
-                  Container(margin: EdgeInsets.only(left: 70), alignment: Alignment.centerLeft, child: Text('Número: (84) 9123-3527', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w600))),
+                  Container(margin: EdgeInsets.only(left: 70), alignment: Alignment.centerLeft, child: Text('Telefone: (84) 9123-3527', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w600))),
                   Container(margin: EdgeInsets.only(left: 70, top: 15, bottom: 15), alignment: Alignment.centerLeft, child: Text('E-mail: psicologaalicemedeiros@gmail.com', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w600))),
                   Row(children: [
                     Container(width: 30, height: 30, margin: EdgeInsets.only(left: 65), child:
@@ -466,7 +399,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(margin: EdgeInsets.only(right: 20, left: 20, top: 20, bottom: 15), alignment: Alignment.centerLeft, child: Text('> Endereço:', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.bold))),
                   Container(margin: EdgeInsets.only(right: 20, left: 20, bottom: 30), alignment: Alignment.centerLeft, child: Text('Avenida Amintas Barros, 3700, Corporate Tower Center, Torre B', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w600))),
                   Container(margin: EdgeInsets.only(right: 20, left: 20, top: 5, bottom: 15), alignment: Alignment.centerLeft, child: Text('> Contatos para agendamento:', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.bold))),
-                  Container(margin: EdgeInsets.only(right: 20, left: 20), alignment: Alignment.centerLeft, child: Text('Número: (84) 99123-3527', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w600))),
+                  Container(margin: EdgeInsets.only(right: 20, left: 20), alignment: Alignment.centerLeft, child: Text('Telefone: (84) 99123-3527', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w600))),
                   Container(margin: EdgeInsets.only(right: 20, left: 20, top: 15, bottom: 15), alignment: Alignment.centerLeft, child: Text('E-mail: psicologaalicemedeiros@gmail.com', style: GoogleFonts.raleway(color: Color.fromARGB(255, 18, 12, 81), fontSize: 18, fontWeight: FontWeight.w600))),
                   Row(children: [
                     Container(width: 30, height: 30, margin: EdgeInsets.only(left: 45), child:
@@ -524,3 +457,47 @@ class CustomVideo extends StatelessWidget {
     ));
   }
 }
+
+Widget serv(BuildContext context) {
+  double swidth = MediaQuery.of(context).size.width;
+  double sheight = MediaQuery.of(context).size.height;
+  double pad = 0;
+  if (swidth>600)[pad = 60];
+  else[pad = 50];
+return Column(
+  children: [
+    Container(width: swidth*0.95, decoration: BoxDecoration(color: Color.fromARGB(255, 229, 204, 201),
+      border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90))), child:
+      ExpansionTile(tilePadding: EdgeInsets.only(right: 30, left: 30), title: Row(
+        children:[
+          Spacer(),
+          Container(width: swidth*0.5, height: 50, alignment: Alignment.centerLeft, child:
+          Text('SERVIÇOS', style: 
+          GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 20))),
+          Spacer()
+          ]),
+      children: [
+        Container(margin: EdgeInsets.only(bottom: 15), child: ListTile(
+          title: Text(
+          "Psicoterapia individual nas modalidades presencial e online através de plataforma segura. Ambas semanais com duração de até 60 minutos.  No primeiro caso, nos encontraremos pessoalmente em meu consultório. Já para o atendimento online, você pode escolher onde estará no momento da sessão, basta ter um computador, celular ou tablet com acesso à internet.", textAlign: TextAlign.justify, style: 
+          TextStyle(height:1.5, color: Color.fromARGB(255, 18, 12, 81)))))
+    ])),
+    Container(height:20, width: 10),
+    Container(width: swidth*0.95, decoration: BoxDecoration(color: Color.fromARGB(255, 229, 204, 201),
+      border: Border.all(width: 3, color: Color.fromARGB(255, 70, 41, 90))), child:
+      ExpansionTile(tilePadding: EdgeInsets.only(right: 30, left: 30), title: Row(
+        children:[
+          Spacer(),
+          Container(width: swidth*0.5, height: 50, alignment: Alignment.centerLeft, child:
+          Text('POR QUE FAZER TERAPIA?', style: 
+          GoogleFonts.courierPrime(color: Color.fromARGB(255, 18, 12, 81), fontSize: 20))),
+          Spacer()
+      ]),
+      children: [
+        Container(margin: EdgeInsets.only(bottom: 15), child: ListTile(
+          title: Text(
+            'Olhar para si mesmo é, muitas vezes, desafiador. Pode provocar medo, insegurança, aquele pensamento de “depois eu penso nisso, agora não”. Mas e quando aquilo que foi deixado para depois começa a nos atrapalhar, provocando ansiedade, tristeza e a sensação de que precisamos falar com alguém sobre aquele assunto? É a partir desse momento que a psicoterapia poderia ajudar. Pode parecer estranho falar sobre si com alguém que não conhecemos. Com o tempo, passamos a confiar no psicólogo que nos acompanha, nos sentimos à vontade para falar sobre os assuntos mais delicados, não nos sentimos julgados, mas acolhidos. Semana após semana percebemos as contribuições das sessões em nosso dia a dia, até que em conjunto com o nosso terapeuta decidimos que naquele momento já podemos seguir sem o acompanhamento profissional, que já conseguimos lidar melhor com os acontecimentos de nossas vidas. Deixamos de nos ver semanalmente, mas cientes de que podemos, a qualquer momento, escolher voltar. Essa é a beleza da psicoterapia.', textAlign: TextAlign.justify, style:  
+          TextStyle(height:1.5, color: Color.fromARGB(255, 18, 12, 81))))),
+    ]))
+  ])
+;}
